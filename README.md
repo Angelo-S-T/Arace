@@ -1,5 +1,5 @@
 # Arace
-Projeto Integrador - Desenvolvido por alunos do curso Técnico Integrado de Informática para Internet - Ifes Campus Serra 
+Projeto Integrador - Desenvolvido por alunos do curso Técnico Integrado de Informática para Internet - Ifes Campus Serra /n
 Desenvolvido em primeira instância ambito digital com plataformas como Trello, Figma, Drive e BrModelo, linkados ao final da descrição.
 
 
