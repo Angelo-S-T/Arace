@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomePage">
         <activity
+            android:name=".Entrada"
+            android:exported="false" />
+        <activity
+            android:name=".Cadastro"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
