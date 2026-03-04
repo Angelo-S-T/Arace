@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
 
-        }*/
+        }
 
 
     private fun replaceFragment(fragment: Fragment){
@@ -45,5 +45,6 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout,fragment)
         fragmentTransaction.commit()
+    }*/
     }
 }
