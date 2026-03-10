@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomePage">
         <activity
+            android:name="com.example.ShopCar.ShopCar"
+            android:exported="false" />
+        <activity
             android:name=".Entrada"
             android:exported="false" />
         <activity
