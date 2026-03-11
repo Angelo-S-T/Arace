@@ -36,6 +36,14 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--
+        É preciso revisar sobre chains e comentar para
+        edição futura. Além disso, todo esse layout irá
+        para uma fragment, ou seja, não ficará nessa activity.
+        A pasta dos fragments e da activity inicial será a
+        "ui". Pretendo seguir as arquiteturas Single Activity
+        Architecture e MVVM.
+    -->
     <TextView
         android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
@@ -98,7 +106,8 @@
             app:layout_constraintEnd_toStartOf="@+id/btn_mi_inicio"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <Button
             android:id="@+id/btn_mi_inicio"
