@@ -16,3 +16,4 @@ Link da apresentação
 Canva:
 https://www.canva.com/design/DAG575YErko/212ILwMvL0hUmZU4VPeiMg/edit?utm_content=DAG575YErko&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
+**TODO:** adicionar README conforme especificações técnicas de documentação de projeto de software e atualizar estrutura de pastas para acomodar o projeto.
