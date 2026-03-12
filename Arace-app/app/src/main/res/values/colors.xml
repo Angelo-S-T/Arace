@@ -10,5 +10,6 @@
     <color name="placeholder1">#56A2CF</color>
 
     <color name="Bg">#FFF0D4</color>
+    <color name="Bg_btt_fin">#F24C08</color>
 
 </resources>
