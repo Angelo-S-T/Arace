@@ -1,4 +1,4 @@
-package com.example.produto.ui
+package com.example.homepage.ui
 
 import android.os.Bundle
 import android.view.View
@@ -6,10 +6,10 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.produto.R
-import com.example.produto.ui.adapter.MyPagerAdapter
+import com.example.homepage.R
+import com.example.homepage.ui.adapter.MyPagerAdapterHome
 
-class ProdutoFragment : Fragment(R.id.fragment_produto) {
+class ProdutoFragmentHome : Fragment(R.layout.fragment_produto_home) {
 
     private lateinit var viewPager: ViewPager2
     private lateinit var dotIndictor: LinearLayout
@@ -23,13 +23,13 @@ class ProdutoFragment : Fragment(R.id.fragment_produto) {
 
         // Lista de imagens (IDs do drawable)
         val items = listOf(
-            R.drawable.panela1,
-            R.drawable.panelas2,
-            R.drawable.panelas3
+            R.drawable.panela_home,
+            R.drawable.passaro_croche,
+            R.drawable.escultura_preguica
         )
 
         // Configura o Adapter
-        val adapter = MyPagerAdapter(items)
+        val adapter = MyPagerAdapterHome(items)
         viewPager.adapter = adapter
 
         // Cria as bolinhas (dots)

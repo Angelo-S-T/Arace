@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import com.example.homepage.R
+import com.example.homepage.ui.adapter.MyPagerAdapterHome
+import androidx.viewpager2.widget.ViewPager2
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,8 @@ class home_page : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var viewPager: ViewPager2
+    private lateinit var dotIndicator: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +41,64 @@ class home_page : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_page, container, false)
+        val view = inflater.inflate(R.layout.fragment_home_page, container, false)
+
+        // Configurar ViewPager2 com imagens
+        viewPager = view.findViewById(R.id.viewPagerProdutos)
+        dotIndicator = view.findViewById(R.id.dotIndicator)
+
+        // Lista de imagens de exemplo (você pode substituir pelas suas imagens)
+        val images = listOf(
+            R.drawable.panela_home,
+            R.drawable.passaro_croche,
+            R.drawable.escultura_preguica
+        )
+
+        // Configurar adapter
+        val adapter = MyPagerAdapterHome(images)
+        viewPager.adapter = adapter
+
+        // Criar os dots indicadores
+        setupDotIndicator(images.size)
+
+        // Listener para atualizar os dots quando a página mudar
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                updateIndicator(position)
+            }
+        })
+
+        return view
+    }
+
+    private fun setupDotIndicator(count: Int) {
+        dotIndicator.removeAllViews()
+        for (i in 0 until count) {
+            val dot = ImageView(requireContext())
+            dot.setImageResource(R.drawable.dot_selector)
+            
+            // Configurar margens entre os dots
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(8, 0, 8, 0)
+            }
+            
+            dot.layoutParams = params
+            dotIndicator.addView(dot)
+        }
+        
+        // Selecionar o primeiro dot
+        updateIndicator(0)
+    }
+
+    private fun updateIndicator(position: Int) {
+        for (i in 0 until dotIndicator.childCount) {
+            val dot = dotIndicator.getChildAt(i) as ImageView
+            dot.isSelected = (i == position)
+        }
     }
 
     companion object {

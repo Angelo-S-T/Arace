@@ -1,12 +1,10 @@
 package com.example.homepage
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.homepage.databinding.ActivityMainBinding
+import com.example.homepage.ui.home_page
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,14 +14,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Carregar o fragment inicial
+        if (savedInstanceState == null) {
+            replaceFragment(home_page())
+        }
+
         //Onde vai implementar as telas do menu
         //Por exemplo:
         //R.id.explorar -> replaceFragment(fragmento1()) significa que o botão com id "explorar"
         //vai direcionar a um fragment "fragmento1"
 
-
-        /*!replaceFragment(Home())
-
+        /*
             binding.bottomNavigationView.setOnItemSelectedListener {
                 when(it.itemId){
                     R.id.explorar -> replaceFragment(fragmento1())
@@ -36,15 +37,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
-
-        }
-
+        */
+    }
 
     private fun replaceFragment(fragment: Fragment){
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout,fragment)
         fragmentTransaction.commit()
-    }*/
     }
 }

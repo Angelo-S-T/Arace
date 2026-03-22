@@ -1,15 +1,15 @@
-package com.example.produto.ui.adapter
+package com.example.homepage.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.produto.R
+import com.example.homepage.R
 
 // Se for passar apenas imagens, a lista será List<Int> em vez de List<Model>
-class MyPagerAdapter(private val images: List<Int>) :
-    RecyclerView.Adapter<MyPagerAdapter.PagerViewHolder>() {
+class MyPagerAdapterHome(private val images: List<Int>) :
+    RecyclerView.Adapter<MyPagerAdapterHome.PagerViewHolder>() {
 
     // Dica de performance: Faça o findViewById aqui dentro do ViewHolder, não no onBind
     inner class PagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -17,7 +17,7 @@ class MyPagerAdapter(private val images: List<Int>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_page, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_page_home, parent, false)
         return PagerViewHolder(view)
     }
 
